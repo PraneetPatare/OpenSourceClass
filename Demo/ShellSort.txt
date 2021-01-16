@@ -1,0 +1,20 @@
+Shell Sort:
+Shell sort is an algorithm that first sorts the elements far apart froom each other and successfully reduces the interval between the elements to be sorted.
+It is generalised version of insertion sort.
+
+Algorithm for Shell Sort:
+1.Start
+2.Initialize mid as half of length of array.
+3.Set i equal to mid.
+4.Initialize temp as array[i]
+5.Set j equal to i
+6.Shift array[j-mid] to array[j]
+7.Decrement j by mid
+8.Repeat steps 6 and 7 while j>=mid and array[j-mid]>temp
+9.Set array[j] equal to temp.
+10.Increment value of I by 1.
+11.Repeat steps 4 to 10 while i<n
+12.Set mid equal to mid/2
+13.Repeat steps 2 to 12 while mid is greater than 0.
+14.Return array
+15.Stop.
