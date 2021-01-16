@@ -1,0 +1,17 @@
+Insertion Sort:
+Insertion sort is based on the idea that one element from the input element is consumed in each iteration to find its correct position ie. the position to which it belongs in sorted array.
+
+Algorithm for insertion sort:
+1.Start.
+2.Read the array.
+3.read the length of array as n.
+4.Iterate through the array.
+5.Set x=lst[i]
+6.Set j=i-1.
+7.Swap array[j] with array[j+1].
+8.Decrement j by 1.
+9.Repeat steps from 7 to 8 while j>=0 and array[j]>x.
+10.Repeat steps 5 to 9 for each iteration of i.
+11.Display array.
+12.Stop.
+

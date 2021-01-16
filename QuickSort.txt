@@ -1,0 +1,81 @@
+Quick Sort:
+This algorithm is divide and conquer type of algorithm.It picks an element as pivot and partition the function as basic building block of quick sort.
+If x is element of an array then ptuting smaller elements in prior to x and greater elements next to x is the purpose of partition.
+  
+Algorithm for Partition :
+//lst->list
+1) start 
+2) set keyelement as first element
+3) set left as second index
+4) set right as  last index
+5) if left is less than or equal to right and lst[left] is less than or equal to keyelement then 
+6) increment left by 1
+7) repeat steps 5 and 6 
+8) if left is less than or equal to right and lst[right] is greater than or equal to keyelement then
+9) decrement right by 1
+10) repeat steps 8 and 9
+11) till left is smaller than right  check
+12) if lst[left] is greater than lst[right]
+13) swap lst[left] with lst[right]
+14) go to step 5
+15)when condition at 11 becomes false swap keyelement with lst[right]
+16)return right
+
+Algorithm for quicksort:
+//lst is the list of students
+1)start
+2)if first is less than last
+3)set position as partition(lst, first, last)
+4)call quicksort (lst, first,p-1)
+5)call quicksort (lst, p+1, last)
+6)return lst
+
+
+Eg:Sorting student percentage using Quick sort:-
+//Code
+class student:
+    def create_list(self,n):
+        global element
+        lst1=[]
+        for i in range(0,n):
+            element=float(input("Enter the percentage of student {} : ".format(i+1)))
+            lst1.append(element)
+        return lst1
+    def keyelement_place(self,lst,first_index,last_index):
+        keyelement=lst[first_index]
+        leftindex=first_index+1
+        rightindex=last_index
+        while True:
+            while leftindex<=rightindex and lst[leftindex]<=keyelement:
+                leftindex = leftindex + 1
+            while leftindex<=rightindex and lst[rightindex]>=keyelement:
+                rightindex = rightindex-1
+            if leftindex>rightindex:              
+                break
+            else:
+                lst[leftindex],lst[rightindex] =lst[rightindex],lst[leftindex]
+        lst[first_index],lst[rightindex] = lst[rightindex],lst[first_index]
+        return rightindex
+    def quicksort(self,lst,first_index, lastindex,):
+        if first_index<lastindex:
+            position = self.keyelement_place(lst,first_index,lastindex)
+            self.quicksort(lst,first_index,position-1)
+            self.quicksort(lst,position+1,lastindex)
+        return lst
+s1=student()
+while True:
+    n =int(input("enter the total number of students : "))
+    lst2=s1.create_list(n)
+    print("*"*100)
+    print("Entered list is : ",lst2)
+    x=len(lst2)
+    print("Quick Sort : ",s1.quicksort(lst2,0,x-1))
+    print("Top 5 scores are : ")
+    print("1st : ", lst2[len(lst2) - 1])
+    print("2nd : ", lst2[len(lst2) - 2])
+    print("3rd : ", lst2[len(lst2) - 3])
+    print("4th : ", lst2[len(lst2) - 4])
+    print("5th : ", lst2[len(lst2) - 5])
+    break
+
+
